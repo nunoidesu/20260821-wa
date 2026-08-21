@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <div id="app">
+    <div id="app">
+  <h1>興味のある技術</h1>
+
+  <label>
+    <input type="checkbox" value="HTML" v-model="skills">
+    HTML
+  </label>
+
+  <label>
+    <input type="checkbox" value="CSS" v-model="skills">
+    CSS
+  </label>
+
+  <label>
+    <input type="checkbox" value="JavaScript" v-model="skills">
+    JavaScript
+  </label>
+
+  <label>
+    <input type="checkbox" value="Vue.js" v-model="skills">
+    Vue.js
+  </label>
+
+  <p>選択中：{{ skills.join(", ") }}</p>
+</div>
+  </div>
+  
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

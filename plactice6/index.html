@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>会員登録フォーム</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div v-if="step === 'input'">
+      <h1>会員登録</h1>
+
+      <form @submit.prevent="confirmForm">
+
+        <div class="form-item">
+          <label>
+            <strong>名前</strong>
+            <input type="text" v-model="name">
+          </label>
+          <span v-if="errors.name">{{ errors.name }}</span>
+  </div>
+
+  <div class="form-item">
+    <label>
+      <strong>メールアドレス</strong>
+      <input type="text" v-model="email">
+    </label>
+    <span v-if="errors.email">{{ errors.email }}</span>
+  </div>
+
+  <div class="form-item">
+    <label>
+      <strong>年齢</strong>
+      <input type="number" v-model.number="age">
+    </label>
+    <span v-if="errors.age">{{ errors.age }}</span>
+  </div>
+
+  <div class="form-items">
+    <strong>性別</strong>
+
+    <div class="radio-options">
+      <label>
+        <input type="radio" value="男性" v-model="gender">男性
+      </label>
+
+        <input type="radio" value="女性" v-model="gender">女性
+      </label>
+
+        <input type="radio" value="その他" v-model="gender">その他
+      </label>
+  </div>
+
+  <span v-if="errors.gender">{{ errors.gender }}</span>
+  </div>
+
+  <div class="form-item">
+    <strong>興味のある分野</strong>
+
+    <div class="skill-options">
+      <label>
+        <input type="checkbox" value="HTML" v-model="skills">HTML
+      </label>
+        <input type="checkbox" value="CSS" v-model="skills">CSS
+      </label>
+        <input type="checkbox" value="Javascript" v-model="skills">Javascript
+      </label>
+        <input type="checkbox" value="Vue.js" v-model="skills">Vue.js
+      </label>
+    </div>
+
+    <span v-if="errors.skills">{{ errors.skills }}</span>
+    </div>
+
+    <div class="form-items">
+      <label>
+        <strong>学習頻度</strong>
+        <select v-model="frequency">
+          <option value="">選択してください</option>
+          <option value="毎日">毎日</option>
+          <option value="週3〜4回">週3〜4回</option>
+          <option value="週1〜2回">週1〜2回</option>
+          <option value="月数回">月数回</option>
+        </select>
+      </label>
+      <span v-if="errors.frequency">{{ errors.frequency }}</span>
+    </div>
+
+    <div class="form-item">
+      <label>
+        <strong>コメント</strong>
+        <textarea v-model="comment"></textarea>
+      </label>
+      <span v-if="errors.commnet">{{ errors.comment }}</span>
+      </div>
+
+      <div class="agreement">
+        <label>
+          <input type="checkbox" v-model="agreed">
+          利用規約に同意する
+        </label>
+
+        <span v-if="errors.agreed">{{ errors.agreed }}</span></div>
+
+        <button type="submit">確認する</button>
+      </form>
+    </div>
+
+    <div v-else-if="step === 'confirm'">
+      <h1>入力内容の確認</h1>
+
+      <dl>
+        <dt>名前</dt>
+        <dd>{{ name }}</dd>
+
+        <dt>メールアドレス</dt>
+        <dd>{{ email }}</dd>
+
+        <dt>年齢</dt>
+        <dd>{{ age }}</dd>
+
+        <dt>性別</dt>
+        <dd>{{ gender }}</dd>
+
+        <dt>興味のある分野</dt>
+        <dd>{{ skills.join("、") }}</dd>
+
+        <dt>学習頻度</dt>
+        <dd>{{ frequency }}</dd>
+
+        <dt>コメント</dt>
+        <dd>{{  }}</dd>
+
+        <dt>利用規約</dt>
+        <dd>同意する</dd>
+      </dl>
+
+      <div class="confirm-buttons">
+        <button type="button" @click="backToInput">戻る</button>
+        <button type="button" @click="submitForm">送信</button>
+      </div>
+    </div>
+
+    <div v-else class="complete">
+      <h1>登録完了</h1>
+
+      <p>会員登録が完了しました</p>
+      <p>ご登録ありがとうございました。</p>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

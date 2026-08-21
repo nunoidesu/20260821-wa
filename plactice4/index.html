@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <div id="app">
+  <h1>支払い方法</h1>
+
+  <label>
+    <input type="radio" value="card" v-model="payment">
+    クレジットカード
+  </label>
+
+  <label>
+    <input type="radio" value="bank" v-model="payment">
+    銀行振込
+  </label>
+
+  <label>
+    <input type="radio" value="convenience" v-model="payment">
+    コンビニ払い
+  </label>
+
+  <h2>選択内容</h2>
+
+  <p v-if="payment === ''">
+    支払い方法を選択してください。
+  </p>
+
+  <div v-else-if="payment === 'card'">
+    <p>選択中：クレジットカード</p>
+    <p>クレジットカードでのお支払いです。</p>
+    <p>手数料：0円</p>
+  </div>
+
+  <div v-else-if="payment === 'bank'">
+    <p>選択中：銀行振込</p>
+    <p>銀行振込でのお支払いです。</p>
+    <p>手数料：330円</p>
+  </div>
+
+  <div v-else-if="payment === 'convenience'">
+    <p>選択中：コンビニ払い</p>
+    <p>コンビニでのお支払いです。</p>
+    <p>手数料：220円</p>
+  </div>
+
+  <button @click="resetPayment">選択をリセット</button>
+</div>
+    
+  </div>
+  
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

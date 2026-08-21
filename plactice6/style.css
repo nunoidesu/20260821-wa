@@ -1,0 +1,187 @@
+body {
+  margin: 0;
+  padding: 40px 20px;
+  background-color: #f4f6f8;
+  color: #333;
+  font-family: sans-serif;
+}
+
+#app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0 0 32px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #333;
+  font-size: 28px;
+}
+
+.form-item {
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+}
+
+strong {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px 12px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+input[type="number"] {
+  width: 120px;
+}
+
+textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+/* ラジオボタン */
+.radio-options {
+  display: flex;
+  gap: 20px;
+}
+
+.radio-options label {
+  display: flex;
+  align-items: center;
+}
+
+.radio-options input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  margin: 0 6px 0 0;
+}
+
+/* チェックボックス */
+.skill-options {
+  display: flex;
+  gap: 20px;
+}
+
+.skill-options label {
+  display: flex;
+  align-items: center;
+}
+
+.skill-options input[type="checkbox"],
+.agreement input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0 6px 0 0;
+}
+
+/* エラーメッセージ */
+.form-item > span,
+.agreement > span {
+  display: block;
+  margin-top: 8px;
+  color: #d33;
+  font-size: 14px;
+}
+
+/* 利用規約 */
+.agreement {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.agreement label {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* 確認ボタン */
+form > button {
+  display: block;
+  margin: 32px auto 0;
+  padding: 11px 28px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* 確認画面 */
+dl {
+  margin: 0 0 32px;
+  border-top: 1px solid #ddd;
+}
+
+dt {
+  margin: 0;
+  padding: 14px 16px 6px;
+  font-weight: bold;
+}
+
+dd {
+  margin: 0;
+  padding: 0 16px 14px;
+  border-bottom: 1px solid #ddd;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.confirm-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.confirm-buttons button {
+  min-width: 120px;
+  padding: 11px 28px;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.confirm-buttons button:first-child {
+  background-color: #777;
+}
+
+.confirm-buttons button:last-child {
+  background-color: #333;
+}
+
+/* 完了画面 */
+.complete {
+  text-align: center;
+}
+
+.complete p {
+  margin: 12px 0;
+}
